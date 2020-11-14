@@ -8,23 +8,9 @@ Version: 1.0
 Author URI: http://outmani.xyz
 */
 require_once('back.php');
-new ImageLinkSharing();
-add_filter('wpseo_opengraph_image', 'change_og_image', 19);
+require_once('front.php');
 
-
-
-function is_bot_of($crawler = '')
-{
-    if (strpos(strtolower($_SERVER['HTTP_USER_AGENT']), trim($crawler)) !== false) {
-        return true;
-    }
-    return false;
+if (is_admin()) {
+    new ImageLinkSharingBack();
 }
-function change_og_image($content)
-{
-    global $post;
-    if (is_bot_of("whatsapp")) {
-        $content = get_the_post_thumbnail_url($post, 'thumbnail') . '#whatsapp';
-    }
-    return $content;
-}
+new ImageLinkSharingFront();

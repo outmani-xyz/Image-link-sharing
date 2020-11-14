@@ -5,7 +5,6 @@
         <div class="ils-group">
             <table class="ils-table " id="ils-platforms">
                 <?php
-                var_dump($platforms);
                 if (!empty($platforms)) :
                     $count = count($platforms);
                     $cpt = 0;

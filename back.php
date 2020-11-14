@@ -1,13 +1,15 @@
 <?php
-class ImageLinkSharing
+class ImageLinkSharingBack  
 {
     private $option = 'ils_platforms';
     function __construct()
     {
-        add_action('admin_menu', [$this, 'ils_add_admin_menu']);
-        add_action('admin_enqueue_scripts', [$this, 'add_js_css_admin']);
-        add_action('wp_ajax_ils_add_platform', [$this, 'add_platform']);
-        add_action('init', [$this, 'save_data']);
+        if (is_admin()) {
+            add_action('admin_menu', [$this, 'ils_add_admin_menu']);
+            add_action('admin_enqueue_scripts', [$this, 'add_js_css_admin']);
+            add_action('wp_ajax_ils_add_platform', [$this, 'add_platform']);
+            add_action('init', [$this, 'save_data']);
+        }
     }
     function ils_add_admin_menu()
     {
@@ -78,4 +80,6 @@ class ImageLinkSharing
         }
         wp_safe_redirect(admin_url('/admin.php?page=ils_setting'),302);exit;
     }
+
+    
 }
