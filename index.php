@@ -7,7 +7,8 @@ Author: outmani.xyz
 Version: 1.0
 Author URI: http://outmani.xyz
 */
-
+require_once('back.php');
+new ImageLinkSharing();
 add_filter('wpseo_opengraph_image', 'change_og_image', 19);
 
 
