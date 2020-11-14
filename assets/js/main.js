@@ -1,5 +1,6 @@
 jQuery(function ($) {
-  $(".ils-add-platform").click(ils_add_platform);
+  $(".ils-add-platform").click(ils_add_platform).data('count',$("#ils-platforms").find("tr").toArray().length);
+  $(".ils-delete-platform").click(ils_delete_platform);
   function ils_add_platform() {
     var _self = this;
     $.ajax({

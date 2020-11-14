@@ -16,6 +16,7 @@ class ImageLinkSharing
 
     function ui_admin_menu()
     {
+        $platforms = get_option($this->option);
         include('ui/ui_admin_menu.php');
     }
 
@@ -75,6 +76,6 @@ class ImageLinkSharing
                 $status = add_option($this->option, $platforms);
             }
         }
-        wp_safe_redirect(admin_url(),302);exit;
+        wp_safe_redirect(admin_url('/admin.php?page=ils_setting'),302);exit;
     }
 }
