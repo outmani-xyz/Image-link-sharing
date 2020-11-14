@@ -1,23 +1,14 @@
 <?php
 global $_wp_additional_image_sizes;
-$platforms = [
-    'facebook' => 'facebook',
-    'twitter' => 'twitter',
-    'instagram' => 'instagram',
-    'whatsapp' => 'whatsapp',
-];
+
 $index = !empty($index) ? $index : 0;
-$name_platform = "platforms[$index][platform_size]";
+$name_platform = "platforms[$index][platform_name]";
 $name_size = "platforms[$index][platform_size]";
 ?>
 <tr>
     <td>
-        <label for=""><?php _e('platform', 'ils') ?> :
-            <select name="<?php echo $name_platform ?>" id="">
-                <?php foreach ($platforms as $key => $value) :  ?>
-                    <option value="<?php echo $key ?>"><?php echo $value ?></option>
-                <?php endforeach; ?>
-            </select>
+        <label for=""><?php _e('platform/user agent', 'ils') ?> :
+            <input name="<?php echo $name_platform ?>" id="">
         </label>
     </td>
     <td>

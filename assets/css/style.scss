@@ -1,3 +1,38 @@
-.ils{
-    
+.ils {
+  box-shadow: 0 0 2px black;
+  padding: 15px;
+  margin: 15px auto;
+  max-width: 1024px;
+  &-group {
+    max-width: 600px;
+    margin-bottom: 30px;
+  }
+
+  form {
+    font-size: 16px;
+    button {
+      text-transform: capitalize;
+    }
+    label{
+        font-size: 18px;
+        text-transform: capitalize;
+        font-weight: 800;
+    }
+    input {
+      font-size: 14px;
+      line-height: 2;
+      color: #32373c;
+      border: 1px solid #7e8993;
+      box-shadow: none;
+      border-radius: 3px;
+      padding: 0 24px 0 8px;
+      min-height: 30px;
+    }
+    input[type="submit"] {
+      width: 100%;
+      max-width: 180px;
+      font-size: 16px;
+      text-transform: capitalize;
+    }
+  }
 }
