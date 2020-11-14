@@ -6,6 +6,7 @@ class ImageLinkSharingFront
     function __construct()
     {
         add_filter('wpseo_opengraph_image', [$this, 'change_og_image'], 99);
+        add_filter('wpseo_og_image', [$this, 'change_og_image'], 99);
     }
 
     function is_bot_of($crawler = '')
